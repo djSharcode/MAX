@@ -1,10 +1,12 @@
-#!/usr/bin/env bash
-# GPT.efi.BTRFS
-# (╯°□°)╯︵ ┻━┻
-# Tips                  || Change /dev/sda to /dev/nvme0n1 or what ever the...            #
-#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~#
-# Color Templates       || #Blue                                                          #
-#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~#
+#!/bin/bash  
+set -euo pipefail 
+setfont ter-120b 
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~#
+#                       ||                                                                  Tom Holkenborg a.k.a. Junkie XL.   #
+#                       ||                                                                      13:37 ━━━━❍━ -15:38         #
+#                       ||                                                                       ↻     ⊲  Ⅱ  ⊳     ↺          #
+#                       ||                                                                       VOLUME: ▁▂▃▄▅▆▇ 100%        #
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~#
 lsblk -do name,size -e 7,11 ; read -r -p "$(tput setaf 6)$(tput bold)Device name: $(tput sgr0)" sda ;
 BT="/dev/${sda}" ;sgdisk -o -n 1::+512M -t 1:EF00 -n -i -p /dev/$sda ; PB="$(ls /dev/* | grep -E "^${BT}p?1$")" 
 PR="$(ls /dev/* | grep -E "^${BT}p?2$")" ;mkfs.vfat "${PB}" ; mkfs.btrfs -fq "${PR}" ; mount "${PR}" /mnt ; cd /mnt ;
