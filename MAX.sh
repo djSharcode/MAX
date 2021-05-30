@@ -1,9 +1,3 @@
-PMT="${PR} /mnt"
- ; cd ; umount /mnt ; ${MNT} {PMT} ; mkdir /mnt/{boot,home,usr,var,lib,opt,etc,sbin,bin,dev,srv,tmp,media}
-${MNT}home {PMT} ;${MNT}usr {PMT} ;${MNT}var {PMT} ;${MNT}lib {PMT} ;${MNT}opt {PMT} ; ${MNT}etc {PMT} ;
-${MNT}bin {PMT} ;${MNT}dev {PMT} ;${MNT}srv {PMT} ;${MNT}tmp {PMT}; ${MNT}media {PMT} ;mount "${PB}" /mnt/boot  
-lsblk -o name,size,type,mountpoint -e 7,11 
-#curl -sL https://git.io/Jsde3 --output install.sh ; chmod +x install.sh ;  ./install.sh
 #!/bin/bash  
 set -euo pipefail 
 setfont ter-120b 
