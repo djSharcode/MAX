@@ -19,7 +19,7 @@ sudo pacman -S git vim ; git clone https://aur.archlinux.org/pikaur.git ; cd pik
 PKR="pikaur -S --noconfirm" ; ${PKR} "$("{PCC}"-ucode)" "$(xf86-video-"{PCC}")" || pikaur -S --noconfirm "$(xf86-video-"{PCC}"gpu)"
 ${PKR} alsa-utils pipewire pipewire-alsa pipewire-pulse pipewire-jack gst-plugin-pipewire libpulse volumeicon-git vlc
 ${PKR} networkmanager-git nm-tray-git grub-git grub-btrfs-git mkinitcpio-btrfs sddm-stellar-theme xdg-user-dirs xdg-utils xorg openbox
-${PKR} tint2-git firefox-developer-edition picom-git wpgtk-git profanity-python2-git all-repository-fonts obmenu-generator obkey
+${PKR} tint2-git firefox-beta picom-git wpgtk-git profanity-python2-git all-repository-fonts obmenu-generator obkey
 ${PKR} thunar-git thunar-volman-devel thunar-archive-plugin-git thunar-custom-actions gvfs-git gufw htop acpid
 ${PKR} alacrity-git vim-youcompleteme-git xterm-git geany-git geany-themes-git geany-plugins-git timeshift-autosnap
 grub-install --target=x86_64-efi --efi-directory=/boot --bootloader-id=GRUB ; grub-mkconfig -o /boot/grub/grub.cfg 
