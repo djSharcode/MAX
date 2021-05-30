@@ -2,10 +2,10 @@
 set -euo pipefail 
 setfont ter-120b 
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~#
-#    Tom Holkenborg a.k.a. Junkie XL.   #                                                                                                                     ||
-#           13:37 ━━━━❍━ -15:38         #                                                                                                                            ||
-#            ↻     ⊲  Ⅱ  ⊳     ↺          #                                                                                                                           ||
-#           VOLUME: ▁▂▃▄▅▆▇ 100%        #                                                                                                                       ||
+#    Tom Holkenborg a.k.a. Junkie XL.                                                                                                                         ||
+#           13:37 ━━━━❍━ -15:38                                                                                                                                      ||
+#            ↻     ⊲  Ⅱ  ⊳     ↺                                                                                                                                      ||
+#           VOLUME: ▁▂▃▄▅▆▇ 100%                                                                                                                                ||
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~#
 lsblk -do name,size -e 7,11 ; RED='\033[1;31m' ; NOC='\033[0m'; printf "${RED}Device name: ${NOC}" ; read SDA 
 sgdisk -Z /dev/$SDA ; sgdisk -o -n 1::+512M -t 1:EF00 -n -i -p /dev/$SDA ; BT="/dev/$SDA" ; BC="btrfs su cr @" 
