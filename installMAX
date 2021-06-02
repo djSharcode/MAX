@@ -12,7 +12,7 @@ ${PKR} networkmanager-git nm-tray-git sddm-stellar-theme xdg-utils-git xorg-xway
 ${PKR} alsa-utils-git pipewire-git pipewire-alsa-git pipewire-pulse-git pipewire-jack-git gst-plugin-pipewire-full-git libpulse-hsphfpd volumeicon-git vlc-git
 ${PKR} tint2-git firefox-beta picom-git wpgtk-git profanity-python2-git all-repository-fonts obmenu-generator obkey-git
 ${PKR} nemo-git nemo-fileroller-git nemo-preview-git nemo-media-columns-git gvfs-git ufw-bzr htop-git 
-${PKR} alacrity-git vim-youcompleteme-git xterm-git geany-git geany-themes-git geany-plugins-git timeshift-autosnap
+${PKR} alacrity-git vim-youcompleteme-git xterm-git geany-git geany-themes-git geany-plugins-git timeshift-autosnap zramd
 
 
 #xfconf-query -c xfce4-session -p /sessions/Failsafe/Client0_Command -t string -sa xfsettingsd
