@@ -23,5 +23,12 @@ reflector -p https -c "$(curl -s https://ipapi.co/country_name)" -f 2 --save /et
 J='MODULES=' ; K='/etc/mkinitcpio.conf' ; L='xf86-video-' ; M="$(lscpu | grep -Eo 'AMD|Intel' | sort -u)"
 if [[ "${M}" == "Intel" ]] ; then N="intel-ucode ${L}intel" && sed -i "s/${J}()/${J}(i915 btrfs)/" ${K}
 elif [[ "${M}" == "AMD" ]] ; then N="amd-ucode ${L}amdgpu" && sed -i "s/${J}()/${J}(amdgpu btrfs)/" ${K} ; fi
+lspci -k | grep -A 2 -E "(VGA|3D)" ; echo "Sectoion "Module" \nLoad "modesetting" \nEndSection" >> /etc/X11/xorg.conf
+#echo "Section "OutputClass" \n Identifer "intel"\n"MatchDriver "i915" \nDriver "modesetting"\n EndSection"
+#echo "Section "OutputClass" \n Identifer "nvidia"\n"MatchDriver "nvidia-drm" \nDriver "nvidia"\nOption "PrimaryGPU" "yes"\n
+#echo "ModulePath"/usr/lib/nvidia/xorg" \nModulePath "/usr/lib/xorg/modles"\n EndSection\n\nSection "Device""
+#echo "Identifer "nvidia" \nBusID "<BusID for NVIDIA device>" \nOption "AllowEMptyInitialConfiguration"\nEndSection"
+#/etc/X11/xorg.conf.d/nvidia-drm-outputclass.conf cp /usr/share/X11/xorg.conf.d/nvidia-drm-outputclass.conf
+
 pacstrap -i /mnt base base-devel linux-lts linux-lts-headers linux-firmware networkmanager efibootmgr grub vim ${N}
 genfstab -U /mnt >> /mnt/etc/fstab ; arch-chroot /mnt sh ./install.sh
