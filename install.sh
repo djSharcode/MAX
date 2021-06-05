@@ -45,7 +45,7 @@ ln -sf "/share/zoneinfo/$(curl -s https://ipapi.co/timezone)" /etc/localtime ; h
 echo "LC_ALL=${D}" >> /etc/environment ; echo "${D} UTF-8" >> ${H}gen ; echo "LANG=${D}" >> ${H}conf ; locale-gen ${D} 
 echo -e "127.0.0.1 localhost \n::1 localhost \n127.0.1.1 ${U}pc.localdomain ${U}pc \n" >> ${I}s ; echo "${U}pc" >> ${I}name
 ${C} "${A}GRUB INSTALL ${B}\n" ; sed -i 's/'${E}'auto/'${E}'1920x1080,auto/' /etc/default/grub 
-sed -i 's/GRUB_CMDLINE_LINUX_DEFAULT=""/${}loglevel=3 quiet splash nvidia-drm.modeset=1/' /etc/default/grub 
+#sed -i 's/GRUB_CMDLINE_LINUX_DEFAULT=""/${}loglevel=3 quiet splash nvidia-drm.modeset=1/' /etc/default/grub 
 grub-install --target=x86_64-efi --efi-directory=/boot --bootloader-id=GRUB ; grub-mkconfig -o /boot/grub/grub.cfg 
 cd / ; chown root:root /home ; chmod 755 /home ; runuser --login ${U} --session-command 'sh ~/installMAX.sh' 
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~#
