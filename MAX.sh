@@ -29,6 +29,5 @@ elif [[ "${M}" == "AMD" ]] ; then N="amd-ucode ${L}amdgpu" && sed -i "s/${J}()/$
 #echo "ModulePath"/usr/lib/nvidia/xorg" \nModulePath "/usr/lib/xorg/modles"\n EndSection\n\nSection "Device""
 #echo "Identifer "nvidia" \nBusID "<BusID for NVIDIA device>" \nOption "AllowEMptyInitialConfiguration"\nEndSection"
 #/etc/X11/xorg.conf.d/nvidia-drm-outputclass.conf cp /usr/share/X11/xorg.conf.d/nvidia-drm-outputclass.conf
-
 pacstrap -i /mnt base base-devel linux-lts linux-lts-headers linux-firmware networkmanager efibootmgr grub vim ${N}
 genfstab -U /mnt >> /mnt/etc/fstab ; arch-chroot /mnt sh ./install.sh
