@@ -8,7 +8,7 @@ then VGA="intel-ucode-git xf86-video-intel-git" && sed -i 's/'${MOD}'()/'${MOD}'
 VGA="amd-ucode-git xf86-video-amdgpu-git" && sed -i 's/'${MOD}'()/'${MOD}'(amdgpu btrfs)/' ${MKC} ; fi 
 cd ~ ; git clone https://aur.archlinux.org/pikaur.git ; cd pikaur ; makepkg --fsri ; PKR="pikaur -S"
 ${PKR} linux-zen-git linux-zen-git-headers linux-firmware-git btrfs-progs-git grub-btrfs-git efibootmgr-git  
-${PKR} networkmanager-git nm-tray-git sddm-stellar-theme xdg-utils-git xorg-xwayland-hidpi-git openbox
+${PKR} networkmanager-git nm-tray-git sddm-stellar-theme xdg-utils-git xorg-xwayland-hidpi-git plasma-git-meta
 ${PKR} alsa-utils-git pipewire-git pipewire-alsa-git pipewire-pulse-git pipewire-jack-git gst-plugin-pipewire-full-git libpulse-hsphfpd volumeicon-git vlc-git
 ${PKR} tint2-git firefox-beta picom-git wpgtk-git profanity-python2-git all-repository-fonts obmenu-generator obkey-git
 ${PKR} nemo-git nemo-fileroller-git nemo-preview-git nemo-media-columns-git gvfs-git ufw-bzr htop-git 
